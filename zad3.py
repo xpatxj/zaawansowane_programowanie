@@ -4,6 +4,7 @@ class Property:
         self.rooms = rooms
         self.price = price
         self.address = address
+
     def __str__(self):
         opis = f"""
         Nieruchomość:
@@ -14,10 +15,12 @@ class Property:
         """
         return opis
 
+
 class House(Property):
     def __init__(self, area, rooms, price, address, plot):
         super().__init__(area, rooms, price, address)
         self.plot = plot
+
     def __str__(self):
         opis = f"""
         Dom:
@@ -29,10 +32,12 @@ class House(Property):
         """
         return opis
 
+
 class Flat(Property):
     def __init__(self, area, rooms, price, address, floor):
         super().__init__(area, rooms, price, address)
         self.floor = floor
+
     def __str__(self):
         opis = f"""
         Mieszkanie:
@@ -43,6 +48,8 @@ class Flat(Property):
         - floor - piętro mieszkania : {self.floor}
         """
         return opis
+
+
 Property = Property(100, 3, 500000, "ul. Kwiatowa 10, Warszawa")
 House = House(100, 3, 500000, "ul. Kwiatowa 10, Warszawa", 200)
 Flat = Flat(100, 3, 500000, "ul. Kwiatowa 10, Warszawa", 5)

@@ -11,10 +11,11 @@ class Student:
         for x in self.marks:
             oceny.append(int(x))
         srednia = sum(oceny) / len(oceny)
-        if srednia>50:
+        if srednia > 50:
             return True
         else:
             return False
+
 
 student1 = Student("Jan", [60, 70, 80])
 print(student1.is_passed())

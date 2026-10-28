@@ -1,5 +1,5 @@
 class Library:
-    def __init__(self, city, street, zip_code, open_hours : str, phone):
+    def __init__(self, city, street, zip_code, open_hours: str, phone):
         self.city = city
         self.street = street
         self.zip_code = zip_code
@@ -16,6 +16,7 @@ class Library:
         - phone - numer telefonu biblioteki
         """
         return opis
+
 
 class Employee:
     def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone):
@@ -62,6 +63,7 @@ class Book:
         """
         return opis
 
+
 class Order:
     def __init__(self, employee, student, books, order_date):
         self.employee = employee
@@ -71,7 +73,7 @@ class Order:
 
     def __str__(self):
         opis = f"""
-        Zamówienie: 
+        Zamówienie:
         - employee - pole pracownika : {self.employee.first_name}
         - student - pole studenta : {self.student.name}
         - books - lista obiektów Book:
@@ -79,11 +81,12 @@ class Order:
             - publication_date - pole obiektu Book
             - author_name - pole obiektu Book
             - author_surname - pole obiektu Book
-            - number_of_pages - pole obiektu Book 
+            - number_of_pages - pole obiektu Book
             {self.books}
         - order_date - data zamowienia : {self.order_date}
         """
         return opis
+
 
 class Student:
     def __init__(self, name, marks):
@@ -98,10 +101,11 @@ class Student:
         for x in self.marks:
             oceny.append(int(x))
         srednia = sum(oceny) / len(oceny)
-        if srednia>50:
+        if srednia > 50:
             return True
         else:
             return False
+
 
 library1 = Library("Warszawa", "ul. Kwiatowa 10", "00-001", "9:00-17:00", "123456789")
 library2 = Library("Kraków", "ul. Różana 5", "30-002", "10:00-18:00", "987654321")

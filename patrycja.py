@@ -11,7 +11,7 @@
 #
 # funkcja(imie1, imie2, imie3, imie4, imie5)
 
-#zadanie b
+# zadanie b
 # def funkcja2(lista_liczb):
 #     if len(lista_liczb) > 6:
 #         print("Podano za dużo liczb. Podaj co najwyżej 5 liczb.")
@@ -29,7 +29,7 @@
 # lista_liczb4 = funkcja2([int(x) for x in lista_liczb2.split(",")])
 # print(lista_liczb4)
 
-#zadanie c
+# zadanie c
 # def funkcja3(lista_liczb):
 #     for liczba in lista_liczb:
 #         if liczba % 2 == 0:
@@ -37,7 +37,7 @@
 #
 # funkcja3(range(1, 11))
 
-#zadanie d
+# zadanie d
 # def funkcja4(lista_liczb):
 #     for liczba in lista_liczb:
 #         if lista_liczb.index(liczba) % 2 == 0:
