@@ -1,5 +1,6 @@
 from . import utils
 
+
 class Order:
     def __init__(self, order_id, product, quantity):
         self.order_id = order_id
