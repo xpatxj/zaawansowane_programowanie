@@ -1,18 +1,19 @@
 """Każde uruchomienie dodaje 1 pracę (status pending). Opcjonalnie: python producer.py 100"""
 import sys
 
-from common import file_lock, read_jobs, write_jobs
+try:
+    from kolejka.common import add_job, file_lock, read_jobs, write_jobs
+except ImportError:
+    from common import add_job, file_lock, read_jobs, write_jobs
 
 
-def produce():
-    with file_lock():
-        jobs = read_jobs()
-        job_id = str(len(jobs) + 1)
-        jobs.append({"id": job_id, "task": f"rozmowa_telefoniczna_{job_id}", "status": "pending"})
-        write_jobs(jobs)
+def produce(db_file=None):
+    job_id = add_job(db_file=db_file)
     print(f"Dodano pracę {job_id}")
+    return job_id
 
 
 if __name__ == "__main__":
-    for _ in range(int(sys.argv[1]) if len(sys.argv) > 1 else 1):
+    count = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+    for _ in range(count):
         produce()
